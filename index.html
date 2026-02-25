@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate Interactive Viewer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Montserrat:wght@300;400;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#4a6741",
+            "background-light": "#f8f9fa",
+            "background-dark": "#121212",
+          },
+          fontFamily: {
+            display: ["Montserrat", "sans-serif"],
+            sans: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+          },
+        },
+      },
+    };
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+  <style>
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .dark .glass-panel {
+      background: rgba(20, 20, 20, 0.8);
+    }
+
+    .canvas-container {
+      height: calc(100vh - 2rem);
+    }
+
+    .active-nav {
+      background-color: #4a6741 !important;
+      color: white !important;
+    }
+
+    html,
+    body,
+    #root {
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<!-- <div id="root"></div> ---->
+
+<body
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+
+  <div id="root"></div>
+
+
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
